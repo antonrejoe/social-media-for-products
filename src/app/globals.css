@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --focus-outline-rgb: #000;
   --input-text-field-bg: #ffff;
+  --submit-google-btn-login-outline: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +18,7 @@
     --background-end-rgb: 0, 0, 0;
     --focus-outline-rgb: #fff;
     --input-text-field-bg: #46464657;
+    --submit-google-btn-login-outline: #fff;
   }
 }
 
@@ -27,12 +29,16 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-
 .login-box>div>input {
+
+  background: var(--input-text-field-bg);
+}
+
+.login-box>div>input,
+.login-box>button {
 
   padding: 0.5rem;
   border-radius: 0.2rem;
-  background: var(--input-text-field-bg);
 
 }
 
@@ -40,6 +46,6 @@ body {
   outline: var(--focus-outline-rgb) 2px solid;
 }
 
-.login-box>div>button {
-  background: #000;
+.login-box>button:hover {
+  outline: var(--submit-google-btn-login-outline) solid;
 }
