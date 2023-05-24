@@ -51,15 +51,14 @@ export default function Home() {
   };
   return (
     <main className="w-full h-[100vh] grid place-items-center">
-      <div className="outline-stone-500 outline-1 outline rounded p-[2rem] shadow-md">
+      <div className="login-box outline-stone-500 outline-1 outline rounded p-[2rem] shadow-md h-[70%] grid gap-4">
         <h1 className="text-3xl my-5">Setup your profile</h1>
         <div>
-          <label htmlFor="name">Name</label>
           <input
             id="name"
             name="name"
             type="text"
-            placeholder="moshi moshi"
+            placeholder="Your name"
             onChange={(e) => {
               setuser({
                 ...user,
@@ -69,13 +68,11 @@ export default function Home() {
           />
         </div>
         <div>
-          <label htmlFor="name">Email</label>
-
           <input
             id="email"
             name="email"
             type="text"
-            placeholder="moshi moshi"
+            placeholder="Your email"
             onChange={(e) => {
               setuser({
                 ...user,
@@ -85,13 +82,11 @@ export default function Home() {
           />
         </div>
         <div>
-          <label htmlFor="name">Password</label>
-
           <input
             id="password"
             name="email"
-            type="text"
-            placeholder="moshi moshi"
+            type="password"
+            placeholder="password"
             onChange={(e) => {
               setuser({
                 ...user,
@@ -104,7 +99,7 @@ export default function Home() {
           Submit{" "}
         </button>
         <button onClick={googleLogin}> google</button>
-        <Link className="block" href="/Login">
+        <Link className="block mx-auto" href="/Login">
           Already an user ?
         </Link>
       </div>
