@@ -1,11 +1,13 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
-import {useRouter} from 'next/navigation';
-import Link from 'next/link';
-import {Account , Client} from 'appwrite';
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Account, Client } from "appwrite";
 
 export default function Home() {
-  const client = new Client().setProject(process.env.NEXT_PUBLIC_PROJECT_ID as string).setEndpoint(process.env.NEXT_PUBLIC_END_PT as string);
+  const client = new Client()
+    .setProject(process.env.NEXT_PUBLIC_PROJECT_ID as string)
+    .setEndpoint(process.env.NEXT_PUBLIC_END_PT as string);
   const account = new Account(client);
   const router = useRouter();
   const [user, setuser] = useState({
@@ -14,7 +16,7 @@ export default function Home() {
     password: "",
   });
 
-  const googleLogin = (e:any) => {
+  const googleLogin = (e: any): void => {
     try {
       e.preventDefault();
       account.createOAuth2Session(
@@ -27,7 +29,7 @@ export default function Home() {
     }
   };
 
-  const signUpUser = async (e:any) => {
+  const signUpUser = async (e: any) => {
     e.preventDefault();
 
     const promise = account.create(
@@ -38,19 +40,19 @@ export default function Home() {
     );
 
     promise.then(
-      function (response:any) {
+      function (response: any) {
         router.push("/profile"); //success
         response.json();
       },
-      function (error:Error) {
+      function (error: Error) {
         console.log(error);
       }
     );
   };
   return (
-  <>
-      <div className="signUpItemContainer text-black">
-        Anata no
+    <main className="w-full h-[100vh] grid place-items-center">
+      <div className="outline-stone-500 outline-1 outline rounded p-[2rem] shadow-md">
+        <h1 className="text-3xl my-5">Setup your profile</h1>
         <div>
           <label htmlFor="name">Name</label>
           <input
@@ -102,9 +104,10 @@ export default function Home() {
           Submit{" "}
         </button>
         <button onClick={googleLogin}> google</button>
+        <Link className="block" href="/Login">
+          Already an user ?
+        </Link>
       </div>
-
-      <Link href="/Login">Already an user ?</Link>
-    </>
+    </main>
   );
 }
