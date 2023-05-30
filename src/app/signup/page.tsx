@@ -50,59 +50,61 @@ export default function Home() {
     );
   };
   return (
-    <main className="w-full h-[100vh] grid place-items-center">
-      <div className="login-box outline-stone-500 outline-1 outline rounded p-[2rem] shadow-md h-[70%] grid gap-4">
-        <h1 className="text-2xl my-5">Setup your profile</h1>
-        <div>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Your name"
-            onChange={(e) => {
-              setuser({
-                ...user,
-                name: e.target.value,
-              });
-            }}
-          />
+    <main className="wrapper-main-signup">
+      <main className="w-full h-[100vh] grid place-items-center">
+        <div className="login-box outline-stone-500 outline-1 outline rounded p-[2rem] shadow-md h-[70%] grid gap-4">
+          <h1 className="text-2xl my-5">Setup your profile</h1>
+          <div>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your name"
+              onChange={(e) => {
+                setuser({
+                  ...user,
+                  name: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <div>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              placeholder="Your email"
+              onChange={(e) => {
+                setuser({
+                  ...user,
+                  email: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <div>
+            <input
+              id="password"
+              name="email"
+              type="password"
+              placeholder="password"
+              onChange={(e) => {
+                setuser({
+                  ...user,
+                  password: e.target.value,
+                });
+              }}
+            />
+          </div>
+          <button type="submit" onClick={signUpUser} className="submitBtn">
+            Submit{" "}
+          </button>
+          <button onClick={googleLogin}> google</button>
+          <Link className="block mx-auto" href="/login">
+            Already an user ?
+          </Link>
         </div>
-        <div>
-          <input
-            id="email"
-            name="email"
-            type="text"
-            placeholder="Your email"
-            onChange={(e) => {
-              setuser({
-                ...user,
-                email: e.target.value,
-              });
-            }}
-          />
-        </div>
-        <div>
-          <input
-            id="password"
-            name="email"
-            type="password"
-            placeholder="password"
-            onChange={(e) => {
-              setuser({
-                ...user,
-                password: e.target.value,
-              });
-            }}
-          />
-        </div>
-        <button type="submit" onClick={signUpUser} className="submitBtn">
-          Submit{" "}
-        </button>
-        <button onClick={googleLogin}> google</button>
-        <Link className="block mx-auto" href="/login">
-          Already an user ?
-        </Link>
-      </div>
+      </main>
     </main>
   );
 }

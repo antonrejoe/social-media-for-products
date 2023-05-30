@@ -9,6 +9,7 @@
   --focus-outline-rgb: #000;
   --input-text-field-bg: #ffff;
   --submit-google-btn-login-outline: #000;
+  --body-bg: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,14 +20,31 @@
     --focus-outline-rgb: #fff;
     --input-text-field-bg: #46464657;
     --submit-google-btn-login-outline: #fff;
+    --body-bg: #333;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background-color: var(--body-bg);
+}
+
+.login-box {
+  /* transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); */
+  backdrop-filter: blur(0.2rem);
+  background: linear-gradient(#ffffff1f, #00000038);
+}
+
+.wrapper-main-signup {
+  /* background: linear-gradient(rgba(0, 0, 255, 0.781), rgb(255, 0, 0));
+  height: fit-content; */
+}
+
+.login-box:hover {
+
+  border: 1rem solid linear-gradient(#ffff, orange);
+  /* border-right: 6px solid;
+  border-bottom: 6px solid; */
 }
 
 .login-box>div>input {
@@ -48,4 +66,11 @@ body {
 
 .login-box>button:hover {
   outline: var(--submit-google-btn-login-outline) solid;
+}
+
+.navbar_main {}
+
+
+.home-feed {
+  position: relative;
 }

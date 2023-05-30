@@ -1,3 +1,12 @@
+import Navbar from "@/components/Navbar";
+import HomeFeed from "../components/HomeFeed";
 export default function Page() {
-  return <>The home page</>;
+  return (
+    <>
+      <Navbar />
+      <main className="home-space">
+        <HomeFeed />
+      </main>
+    </>
+  );
 }

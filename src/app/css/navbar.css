@@ -1,0 +1,22 @@
+:root {
+
+    --nav-bg: linear-gradient(#dfdfdf, #ffffff34);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --nav-bg: linear-gradient(#333, #3333335b);
+    }
+}
+
+.navbar_main {
+
+
+    background: var(--nav-bg);
+    width: 100vw;
+    backdrop-filter: blur(0.2rem);
+    border-bottom: solid #ffffff5d 0.01px;
+
+    position: sticky;
+}
