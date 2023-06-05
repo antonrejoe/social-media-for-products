@@ -1,6 +1,7 @@
 :root {
 
     --nav-bg: linear-gradient(#dfdfdf, #ffffff34);
+    --log-sign-btn-bg: wheat;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,10 +14,27 @@
 .navbar_main {
 
 
+    display: grid;
+    grid-auto-flow: column;
     background: var(--nav-bg);
     width: 100vw;
     backdrop-filter: blur(0.2rem);
     border-bottom: solid #ffffff5d 0.01px;
 
     position: sticky;
+}
+
+.navbar_btn_div>button {
+
+    background: var(--log-sign-btn-bg);
+
+}
+
+.navbar_btn_div {
+    gap: 2rem;
+}
+
+
+.logo_navbar {
+    display: inline-block;
 }

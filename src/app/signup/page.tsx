@@ -40,9 +40,9 @@ export default function Home() {
     );
 
     promise.then(
-      function (response: any) {
+      function (response: Object) {
         router.push("/profile"); //success
-        response.json();
+        console.log(response);
       },
       function (error: Error) {
         console.log(error);
